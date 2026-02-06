@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --accent: #EE1E7C
+}
+
+body {
+  font-family: opensans-ne,sans-serif;
+  background-color: black;
+  color: white;
+  line-height: 1.25;
+}
+
+@font-face {
+  font-family: opensans-ne;
+  src: url('public/fonts/OpenSansCondensedBold.woff2') format('woff2');;
+}
+
+.main-header {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.logo {
+  position: absolute;
+  font-size: 3rem;
+  top: 20px;
+  left: 10%;
+  font-weight: 800;
+  span{
+    color: var(--accent);
+  }
+}
+
+.add-new {
+  color: var(--accent);
+  text-decoration: none;
+  padding: 12px 30px;
+  border: 1px solid var(--accent);
+  position: absolute;
+  top: 35px;
+  right: 10%;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.head-text {
+
+}
