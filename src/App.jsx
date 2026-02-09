@@ -1,6 +1,38 @@
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ScrollSmoother } from 'gsap/ScrollSmoother';
+import { useGSAP } from '@gsap/react';
+import {useRef, useState} from 'react';
+
+gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother);
+
+
 function App() {
+    const main = useRef();
+    const smoother = useRef();
+
+    const scrollTo = () => {
+        smoother.current.scrollTo('.box-c', true, 'center center');
+    };
 
 
+    useGSAP(
+        () => {
+            // create the smooth scroller FIRST!
+            smoother.current = ScrollSmoother.create({
+                smooth: 2, // seconds it takes to "catch up" to native scroll position
+                effects: true, // look for data-speed and data-lag attributes on elements and animate accordingly
+            });
+          /*  ScrollTrigger.create({
+                trigger: '.box-c',
+                pin: true,
+                start: 'center center',
+                end: '+=300',
+                markers: true,
+            });*/
+        },
+        { scope: main }
+    );
 
     const minWidth = 240
     const maxWidth = 550
@@ -99,8 +131,8 @@ function App() {
     }
 
     return (
-        <div className='wrapper'>
-            <div className="content">
+        <div className='wrapper' ref={main}>
+            <div className="content" id="smooth-content">
 
                 <div>
                     <header className="main-header">
