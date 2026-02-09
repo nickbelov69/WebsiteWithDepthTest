@@ -109,6 +109,10 @@ function App() {
         })
     }
 
+//Переписать window.onload
+//Переписать querySelector (заменить на useRef)
+//Переписать addEventListener
+//Переписать mousemove (react.event), resize (resize на resizeObserver/mutationIbserver)
 
     window.onload = () => {
         const mainHeader = document.querySelector('.main-header')
