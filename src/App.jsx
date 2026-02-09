@@ -10,6 +10,7 @@ gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother);
 function App() {
     const main = useRef();
     const smoother = useRef();
+    const test = useRef(false);
 
     const scrollTo = () => {
         smoother.current.scrollTo('.box-c', true, 'center center');
