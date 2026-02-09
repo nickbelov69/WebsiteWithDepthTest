@@ -109,6 +109,7 @@ function App() {
         })
     }
 
+
 //Переписать window.onload
 //Переписать querySelector (заменить на useRef)
 //Переписать addEventListener
